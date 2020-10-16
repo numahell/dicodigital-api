@@ -27,6 +27,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'django_extensions',
+    'django_filters',
     'rest_framework',
     'corsheaders',
     'rest_framework_swagger',
