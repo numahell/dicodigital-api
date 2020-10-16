@@ -17,13 +17,13 @@ import os
 
 import dicodigital.dico.urls
 
-from django.conf.urls import include, url
+from django.urls import include, path
 from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'', include(dicodigital.dico.urls)),
+    path('admin/', admin.site.urls),
+    path('', include(dicodigital.dico.urls)),
 ]
 
 if 'TRAVIS' not in os.environ:
@@ -32,5 +32,5 @@ if 'TRAVIS' not in os.environ:
     schema_view = get_swagger_view(title='Doc')
 
     urlpatterns += [
-        url(r'^doc/', schema_view)
+        path('doc/', schema_view)
     ]

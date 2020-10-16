@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 
 from rest_framework.routers import DefaultRouter
 
@@ -11,9 +11,9 @@ router.register(r'definition', views.Definition)
 router.register(r'vote', views.Vote)
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
-    url(
-        r'^api-auth/',
+    path('', include(router.urls)),
+    path(
+        'api-auth/',
         include('rest_framework.urls', namespace='rest_framework')
     )
 ]
